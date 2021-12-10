@@ -6,6 +6,10 @@ nav ul a:hover {
   background-color: transparent;
 }
 
+nav ul a:focus {
+  background-color: green;
+}
+
 .brand-logo {
   cursor: pointer;
 }
@@ -21,6 +25,7 @@ nav ul a:hover {
   left: 50%;
   transform: translate(-50%, 50%) rotate(90deg);
   cursor: pointer;
+  margin-left: 100px;
 }
 
 .logoText {
