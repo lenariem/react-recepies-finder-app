@@ -5,6 +5,7 @@ import Home from "./components/pages/Home.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import NotFoundPage from "./components/pages/NotFoundPage.jsx";
+import SingleRecipe from "./components/pages/SingleRecipe.jsx";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/recipes/:id" element={<SingleRecipe />}/>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

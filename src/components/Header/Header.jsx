@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 /* import Logo from "../../img/logo.svg"; */
 import GitIcon from "../../img/github.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -16,10 +16,10 @@ export default function Header() {
           <span className="logoText">IT BOOKS</span>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
             <li>
               <a
