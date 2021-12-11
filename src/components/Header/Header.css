@@ -2,13 +2,22 @@ nav {
   padding: 0 1.4rem;
 }
 
+nav ul a{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
 nav ul a:hover {
   background-color: transparent;
 }
 
 nav ul a:focus {
-  background-color: green;
+  background-color: #00897b;
 }
+.transparent:focus {
+  background-color: transparent;
+}
+
 
 .brand-logo {
   cursor: pointer;
@@ -26,6 +35,7 @@ nav ul a:focus {
   transform: translate(-50%, 50%) rotate(90deg);
   cursor: pointer;
   margin-left: 100px;
+  background-color: transparent;
 }
 
 .logoText {

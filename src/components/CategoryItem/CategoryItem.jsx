@@ -12,11 +12,11 @@ export default function CategoryItem(props) {
        
       </div>
       <div className="card-content">
-        <span className="card-title blue-text text-darken-2">{strCategory}</span>
+        <span className="card-title blue-teal text-lighten-2">{strCategory}</span>
         <p>{strCategoryDescription.slice(0, 80)}...</p>
       </div>
-      <div className="card-action">
-        <Link to={`/category/${idCategory}`} className="btn center">
+      <div className="card-action center">
+        <Link to={`/category/${idCategory}`} className="waves-effect waves-light btn">
           Watch Category
         </Link>
       </div>
