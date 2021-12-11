@@ -13,7 +13,7 @@ export default function Header() {
             {/*  <img src={Logo} alt="logo" className="logoIcon" /> */}
           </div>
 
-          <span className="logoText">IT BOOKS</span>
+          <span className="logoText">What do you have appetite for?</span>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
               <NavLink to="/about">About</NavLink>

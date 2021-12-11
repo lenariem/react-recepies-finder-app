@@ -4,7 +4,7 @@ import CategoryItem from "../CategoryItem/CategoryItem";
 
 export default function CategoryList({ catalog = [] }) {
   return (
-    <div className="catalogList">
+    <div className="categoryList">
       {catalog.map((item) => (
         <CategoryItem key={item.idCategory} {...item} />
       ))}

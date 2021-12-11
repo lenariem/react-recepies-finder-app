@@ -1,10 +1,25 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./CategoryItem.css";
 
 export default function CategoryItem(props) {
-    const {idCategory} = props;
-    return (
-        <div className='categoryItem'>
-            {idCategory}
-        </div>
-    )
+  const { idCategory, strCategory, strCategoryDescription, strCategoryThumb } =
+    props;
+  return (
+    <div className="card">
+      <div className="card-image">
+        <img src={strCategoryThumb} alt={strCategory} />
+       
+      </div>
+      <div className="card-content">
+        <span className="card-title blue-text text-darken-2">{strCategory}</span>
+        <p>{strCategoryDescription.slice(0, 80)}...</p>
+      </div>
+      <div className="card-action">
+        <Link to={`/category/${idCategory}`} className="btn center">
+          Watch Category
+        </Link>
+      </div>
+    </div>
+  );
 }
