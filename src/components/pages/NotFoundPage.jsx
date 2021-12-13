@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import BackBtn from "../backBtn/BackBtn";
 /* import CatNotFound from "../img/cat.jpg"; */
 
