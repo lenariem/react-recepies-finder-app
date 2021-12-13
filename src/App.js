@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Home from "./components/pages/Home.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import NotFoundPage from "./components/pages/NotFoundPage.jsx";
-import SingleRecipe from "./components/pages/SingleRecipe.jsx";
-import "./App.css";
+import Category from "./components/pages/Category.jsx";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/recipes/:id" element={<SingleRecipe />}/>
+            <Route path="/category/:name" element={<Category />}/>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

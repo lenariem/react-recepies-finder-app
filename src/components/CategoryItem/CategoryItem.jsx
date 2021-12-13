@@ -16,8 +16,8 @@ export default function CategoryItem(props) {
         <p>{strCategoryDescription.slice(0, 80)}...</p>
       </div>
       <div className="card-action center">
-        <Link to={`/category/${idCategory}`} className="waves-effect waves-light btn">
-          Watch Category
+        <Link to={`/category/${strCategory}`} className="waves-effect waves-light btn">
+          Open Category
         </Link>
       </div>
     </div>
