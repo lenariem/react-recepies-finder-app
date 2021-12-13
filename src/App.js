@@ -7,6 +7,7 @@ import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import NotFoundPage from "./components/pages/NotFoundPage.jsx";
 import Category from "./components/pages/Category.jsx";
+import Recipe from "./components/pages/Recipe";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/category/:name" element={<Category />}/>
+            <Route path="/meal/:id" element={<Recipe />}/>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

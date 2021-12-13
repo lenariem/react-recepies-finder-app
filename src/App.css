@@ -17,6 +17,15 @@
     transform: scale(0.98);
   }
 
+  img, iframe { 
+    max-width: 100%; 
+  }
+
+  iframe {
+    width: 600px;
+    height: 350px;
+  }
+
   /*  #f9a825 yellow darken-3
       #00897b teal darken-1 
   */
