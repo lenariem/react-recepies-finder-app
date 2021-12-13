@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 import "./CategoryItem.css";
 
 export default function CategoryItem(props) {
-  const { idCategory, strCategory, strCategoryDescription, strCategoryThumb } =
+  const { strCategory, strCategoryDescription, strCategoryThumb } =
     props;
   return (
     <div className="card">
       <div className="card-image">
         <img src={strCategoryThumb} alt={strCategory} />
-       
       </div>
       <div className="card-content">
-        <span className="card-title blue-teal text-lighten-2">{strCategory}</span>
+        <span className="card-title blue-teal text-lighten-2"><b>{strCategory}</b></span>
         <p>{strCategoryDescription.slice(0, 80)}...</p>
       </div>
       <div className="card-action center">
