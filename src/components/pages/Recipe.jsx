@@ -16,8 +16,17 @@ export default function Recipe() {
     strYoutube,
   } = recipe;
 
-  const instr = strInstructions.replace(/(\r\n|\r|\n)/g, '<br />');
-  /* const result = reactStringReplace(strInstructions, /(\r\n|\r|\n)/g, (match, i) => <br />) */
+  // separate steps of instruction
+  function replaceJSX(str, find, replace) {
+    const parts = str.split(find);
+    const result = [];
+    for (let i = 0; i < parts.length; i++) {
+      result.push(parts[i]);
+      if (i < parts.length - 1) result.push(replace);
+    }
+    return result;
+  }
+  const instr = replaceJSX(strInstructions, /(\r\n|\r|\n)/g, <br />);
 
   useEffect(() => {
     getMealById(id).then((data) => setRecipe(data.meals[0]));
@@ -29,7 +38,7 @@ export default function Recipe() {
         <Preloader />
       ) : (
         <div className="recipe">
-          <img src={strMealThumb} alt={strMeal} />
+          <img src={strMealThumb} alt={strMeal} className="recipeImg" />
           <h1>{strMeal}</h1>
           <h6>
             Category: <b>{strCategory}</b>
