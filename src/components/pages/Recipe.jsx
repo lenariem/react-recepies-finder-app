@@ -16,6 +16,9 @@ export default function Recipe() {
     strYoutube,
   } = recipe;
 
+  const instr = strInstructions.replace(/(\r\n|\r|\n)/g, '<br />');
+  /* const result = reactStringReplace(strInstructions, /(\r\n|\r|\n)/g, (match, i) => <br />) */
+
   useEffect(() => {
     getMealById(id).then((data) => setRecipe(data.meals[0]));
   }, [id]);
@@ -44,25 +47,21 @@ export default function Recipe() {
               </tr>
             </thead>
             <tbody>
-             {
-                 Object.keys(recipe).map(key => {
-                     if(key.includes('Ingredient') && recipe[key]) {
-                        return (
-                            <tr key={key}>
-                                <td>{recipe[key]}</td>
-                                <td>{
-                                   recipe[`strMeasure${key.slice(13)}`] 
-                                }</td>
-                            </tr>
-                        )
-                     } 
-                     return null;
-                 })
-             }
+              {Object.keys(recipe).map((key) => {
+                if (key.includes("Ingredient") && recipe[key]) {
+                  return (
+                    <tr key={key}>
+                      <td>{recipe[key]}</td>
+                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                    </tr>
+                  );
+                }
+                return null;
+              })}
             </tbody>
           </table>
 
-          <p>{strInstructions}</p>
+          <p>{instr}</p>
           {strYoutube ? (
             <div className="row">
               <h5>Video Recipe</h5>
