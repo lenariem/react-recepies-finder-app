@@ -4,7 +4,6 @@ import { getAllCategories } from "../../api";
 import Preloader from "../Preloader/Preloader";
 import CategoryList from "../CategoryList/CategoryList";
 import Search from "../Search/Search";
-import SelectCategory from "../Search/Select";
 
 export default function Home() {
   const [catalog, setCatalog] = useState([]);
@@ -38,7 +37,7 @@ export default function Home() {
   return (
     <>
       <Search cb={handleUserSearch} />
-      <SelectCategory cb={handleUserSearch} />
+     
       {!filteredCatalog.length && <p>No results</p>} 
 
       {!catalog.length ? (

@@ -60,8 +60,8 @@ export default function Recipe() {
                 if (key.includes("Ingredient") && recipe[key]) {
                   return (
                     <tr key={key}>
-                      <td>{recipe[key]}</td>
-                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                      <td key={Math.random()}>{recipe[key]}</td>
+                      <td key={Math.random()}>{recipe[`strMeasure${key.slice(13)}`]}</td>
                     </tr>
                   );
                 }
