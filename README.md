@@ -4,7 +4,7 @@
 
 **to take a look please click this link:** 
 
-https://lenariem.github.io/recipe_finder/
+https://react-recepies-finder-app-lenariem.vercel.app/
 
 ### Technologies used: 
 * React JS
