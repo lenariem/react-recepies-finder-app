@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import {API_URL} from '../../config';
 import "./Search.css";
 
 export default function Search({ cb = Function.prototype }) {
   const [searchTerm, setSearchTerm] = useState("");
   
   const handleSearchTerm = (e) => {
-    let term = e.target.value.toLowerCase();
+    let term = e.target.value;
     setSearchTerm(term);
   };
 
