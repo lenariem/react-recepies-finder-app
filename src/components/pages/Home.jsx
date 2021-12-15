@@ -37,6 +37,9 @@ export default function Home() {
   return (
     <>
       <Search cb={handleUserSearch} />
+
+      {!filteredCatalog.length && <p>No results</p>} 
+
       {!catalog.length ? (
         <Preloader />
       ) : (

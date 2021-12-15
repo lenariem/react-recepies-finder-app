@@ -1,5 +1,5 @@
 import { API_URL } from "./config";
-console.log(API_URL)
+
 //meal details by id
 const getMealById = async (mealId) => {
   const response = await fetch(API_URL + "lookup.php?i=" + mealId);

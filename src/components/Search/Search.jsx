@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {API_URL} from '../../config';
 import "./Search.css";
 
 export default function Search({ cb = Function.prototype }) {
@@ -29,7 +30,7 @@ export default function Search({ cb = Function.prototype }) {
           <input
             type="text"
             className="validate"
-            placeholder="Search..."
+            placeholder="Search by category..."
             maxLength="130"
             value={searchTerm}
             onChange={handleSearchTerm}
@@ -47,8 +48,6 @@ export default function Search({ cb = Function.prototype }) {
           </button>
         </div>
       </div>
-
-      {searchTerm && <p>Found {/* {} */} recipes</p>}
     </>
   );
 }
