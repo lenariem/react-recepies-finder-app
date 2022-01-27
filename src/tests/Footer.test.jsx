@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
-import Footer from "./Footer";
+import Footer from "../components/Footer/Footer";
 
 describe("Footer component:", () => {
     beforeEach(() => {
@@ -9,7 +9,7 @@ describe("Footer component:", () => {
 
     test("copyright rendering", () => {
         const author = screen.getByText('Copyright Elena Riemer', { exact: false });
-        expect(author).toBeInTheDocument;
+        expect(author).toBeInTheDocument();
     });
 
     test("copyright rendering correct year", () => {
@@ -23,6 +23,6 @@ describe("Footer component:", () => {
         const topButton = screen.getByRole("button", {
             name: /go to top/i,
         });
-        expect(topButton).toBeEnabled;
+        expect(topButton).toBeEnabled();
     });
 });

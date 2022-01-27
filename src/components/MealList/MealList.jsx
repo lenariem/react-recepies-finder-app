@@ -12,7 +12,7 @@ export default function MealList({ meals }) {
       </div>
     <div className="mealsList">
       {meals.map((meal) => (
-        <Meal key={meal.idMeal + Math.random()} {...meal} />
+        <Meal key={meal.idMeal + Math.floor(Math.random() * 1000000)} {...meal} />
       ))}
     </div>
     </>

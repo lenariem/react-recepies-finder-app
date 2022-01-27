@@ -6,8 +6,9 @@ export default function CategoryList({ catalog = [] }) {
   return (
     <div className="categoryList">
       {catalog.map((item) => (
-        <CategoryItem key={item.idCategory + Math.random()} {...item} />
+        <CategoryItem key={item.idCategory + Math.floor(Math.random() * 1000000)} {...item} />
       ))}
     </div>
   );
 }
+Math.floor(Math.random() * 1000000)

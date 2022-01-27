@@ -59,9 +59,9 @@ export default function Recipe() {
               {Object.keys(recipe).map((key) => {
                 if (key.includes("Ingredient") && recipe[key]) {
                   return (
-                    <tr key={key}>
-                      <td key={Math.random()}>{recipe[key]}</td>
-                      <td key={Math.random()}>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                    <tr key={key + Math.floor(Math.random() * 1000000)}>
+                      <td key={Math.floor(Math.random() * 1000000)}>{recipe[key]}</td>
+                      <td key={Math.floor(Math.random() * 1000000)}>{recipe[`strMeasure${key.slice(13)}`]}</td>
                     </tr>
                   );
                 }
