@@ -19,7 +19,6 @@ describe("Search component:", () => {
         expect(searchBtn).toBeInTheDocument;
     });
 
-    //type search correct and check result
     test("search term displays correct", () => {
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "hello");
@@ -29,6 +28,7 @@ describe("Search component:", () => {
 
     test("user types incorrect search term", async () => {
         const errorMsg = screen.getByText(/no results/i);
+        
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "chacin");
 
@@ -37,23 +37,23 @@ describe("Search component:", () => {
 
     test("user types correct search term", async () => {
         const searchBtn = screen.getByRole("button", { name: /search/i });
-        const searchResult = screen.findByRole('img', {  name: /chicken/i});
-       
+        const searchResult = screen.findByRole("img", { name: /chicken/i });
+
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "chicken");
         userEvent.click(searchBtn);
-        
+
         await expect(searchResult).toBeInTheDocument;
     });
 
     test("searching is case insensitive and starts on enter press key", async () => {
         const searchBtn = screen.getByRole("button", { name: /search/i });
-        const searchResult = screen.findByRole('img', {  name: /vegetarian/i});
-       
+        const searchResult = screen.findByRole("img", { name: /vegetarian/i });
+
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "VeGetaRiAN {enter}");
         //userEvent.click(searchBtn);
-        
+
         await expect(searchResult).toBeInTheDocument;
     });
 });
