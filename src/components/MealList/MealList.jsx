@@ -5,7 +5,7 @@ import BackBtn from "../backBtn/BackBtn";
 
 export default function MealList({ meals }) {
   return (
-      <React.Fragment key={Math.floor(Math.random() * 10000000)}>
+      <>
       <div className="row">
         <p>Found {meals.length} recipes</p>
         <BackBtn />
@@ -15,6 +15,6 @@ export default function MealList({ meals }) {
         <Meal key={meal.idMeal + Math.floor(Math.random() * 1000000)} {...meal} />
       ))}
     </div>
-    </React.Fragment>
+    </>
   );
 }

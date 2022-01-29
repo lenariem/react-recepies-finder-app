@@ -59,9 +59,9 @@ export default function Recipe() {
               {Object.keys(recipe).map((key) => {
                 if (key.includes("Ingredient") && recipe[key]) {
                   return (
-                    <tr key={key + Math.floor(Math.random() * 1000000)}>
-                      <td key={Math.floor(Math.random() * 1000000)}>{recipe[key]}</td>
-                      <td key={Math.floor(Math.random() * 1000000)}>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                    <tr key={Math.floor(Math.random() * 10000000)}>
+                      <td>{recipe[key]}</td>
+                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
                     </tr>
                   );
                 }
@@ -78,6 +78,7 @@ export default function Recipe() {
                 title={id}
                 src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`}
                 allowFullScreen
+              
               />
             </div>
           ) : null}
