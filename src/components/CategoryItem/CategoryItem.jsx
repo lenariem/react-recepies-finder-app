@@ -8,7 +8,7 @@ export default function CategoryItem(props) {
   return (
     <div className="card">
       <div className="card-image">
-        <img src={strCategoryThumb} alt={strCategory} />
+        <img src={strCategoryThumb} alt={`${strCategory} category`} />
       </div>
       <div className="card-content">
         <span className="card-title blue-teal text-lighten-2"><b>{strCategory}</b></span>

@@ -19,7 +19,7 @@ const getFilteredCategory = async (categoryName) => {
 
 */
 export const handlers = [
-    rest.get(`${API_URL} + "categories.php"`, (req, res, ctx) => {
+    rest.get(`${API_URL}categories.php`, (req, res, ctx) => {
         return res(
             ctx.json({
                 "categories": [
@@ -111,7 +111,16 @@ export const handlers = [
             })
         );
     }),
-    rest.get(`${API_URL} + "filter.php?c=Seafood"`, (req, res, ctx) => {
+
+    /* rest.get('/products', (req, res, ctx) => {
+    const productId = req.url.searchParams.get('id')
+    return res(
+      ctx.json({
+        productId,
+      }),
+    )
+  }), */
+    rest.get(`${API_URL}filter.php?c=Seafood`, (req, res, ctx) => {
         return res(
             ctx.json({
                 "meals": [
@@ -255,7 +264,7 @@ export const handlers = [
         );
     }),
 
-    rest.get(`${API_URL} + "lookup.php?i=52959"`, (req, res, ctx) => {
+    rest.get(`${API_URL}lookup.php?i=52959`, (req, res, ctx) => {
         return res(
             ctx.json({
                 "meals": [

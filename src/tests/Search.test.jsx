@@ -6,9 +6,9 @@ import App from "../App";
 describe("Search component rendering:", () => {
     let searchInput;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         render(<App />);
-        searchInput = screen.getByRole("textbox");
+        searchInput = await screen.findByRole("textbox");
     });
 
     afterEach(() => {
@@ -24,7 +24,7 @@ describe("Search component rendering:", () => {
         expect(searchBtn).toBeInTheDocument();
     });
 
-    test("search term displays correct", async () => {
+    test("search term displays correct", () => {
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "hello");
 
@@ -37,21 +37,18 @@ describe("Search component rendering:", () => {
 
         const errorMsg = await screen.findByText(/no results/i);
 
-        await expect(errorMsg).toBeInTheDocument();
+       expect(errorMsg).toBeInTheDocument();
     });
 
     test("user types correct search term", async () => {
-        const searchBtn = screen.getByRole("button", { name: /search/i });
-
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "chicken");
-        userEvent.click(searchBtn);
 
         const searchResult = await screen.findByRole("img", {
-            name: /chicken/i,
+            name: /chicken category/i,
         });
 
-        await expect(searchResult).toBeInTheDocument();
+        expect(searchResult).toBeInTheDocument();
     });
 
     test("searching is case insensitive and starts on enter press key", async () => {
@@ -59,8 +56,8 @@ describe("Search component rendering:", () => {
         userEvent.clear(searchInput);
         userEvent.type(searchInput, "VeGetaRiAN {enter}");
         //userEvent.click(searchBtn);
-        const searchResult = await screen.findByAltText(/vegetarian/i);
+        const searchResult = await screen.findByAltText(/vegetarian category/i);
 
-        await expect(searchResult).toBeInTheDocument();
+        expect(searchResult).toBeInTheDocument();
     });
 });
