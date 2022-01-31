@@ -6,6 +6,11 @@ describe("Home page:", () => {
     beforeEach(() => {
         render(<App />);
     });
+    
+    test("expect loading to be displayed", () => {
+        const loading = screen.getByText(/loading/i);
+        expect(loading).toBeInTheDocument();
+    });
 
     test("categories are on the page", async () => {
         const categories = await screen.findAllByRole("img", {

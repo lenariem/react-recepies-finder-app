@@ -29,7 +29,7 @@ export default function Recipe() {
         return result;
     }
 
-    const instr = replaceJSX(strInstructions, /(\r\n|\r|\n)/g,"/n");
+    const instr = replaceJSX(strInstructions, /(\r\n|\r|\n)/g, <br />);
 
     useEffect(() => {
         getMealById(id).then(data => setRecipe(data.meals[0]));
