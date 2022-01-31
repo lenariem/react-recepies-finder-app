@@ -7,15 +7,8 @@ describe("Category page:", () => {
     test("correct rendering seafood category:", async () => {
         render(<App />);
 
-        const searchInput = await screen.findByRole("textbox");
-        const searchBtn = await screen.findByRole("button", {
-            name: /search/i,
-        });
-        userEvent.clear(searchInput);
-        userEvent.type(searchInput, "seafood");
-        userEvent.click(searchBtn);
-        const openBtn = await screen.findByText("Open Category");
-        userEvent.click(openBtn);
+        const seafoodOpenBtn = await screen.findByTestId("seafoodOpenBtn");
+        userEvent.click(seafoodOpenBtn);
 
         //Recipes are on the page
         const categories = await screen.findAllByRole("img", {
