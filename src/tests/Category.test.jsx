@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import App from "../App";
 import userEvent from "@testing-library/user-event";
+import App from "../App";
 
 describe("Category page:", () => {
     test("correct rendering seafood category:", async () => {
