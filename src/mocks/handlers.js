@@ -1,23 +1,6 @@
 import { rest } from "msw";
 import { API_URL } from "../config";
-/* 
 
-const getMealById = async (mealId) => {
-  const response = await fetch(API_URL + "lookup.php?i=" + mealId);
-  return await response.json();
-};
-
-const getAllCategories = async () => {
-  const response = await fetch(API_URL + "categories.php");
-  return await response.json();
-};
-
-const getFilteredCategory = async (categoryName) => {
-  const response = await fetch(API_URL + "filter.php?c=" + categoryName);
-  return await response.json();
-};
-
-*/
 export const handlers = [
     rest.get(`${API_URL}categories.php`, (req, res, ctx) => {
         return res(
@@ -112,14 +95,6 @@ export const handlers = [
         );
     }),
 
-    /* rest.get('/products', (req, res, ctx) => {
-    const productId = req.url.searchParams.get('id')
-    return res(
-      ctx.json({
-        productId,
-      }),
-    )
-  }), */
     rest.get(`${API_URL}filter.php?c=Seafood`, (req, res, ctx) => {
         return res(
             ctx.json({

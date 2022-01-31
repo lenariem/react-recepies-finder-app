@@ -1,4 +1,4 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 import App from "../App";
@@ -37,18 +37,19 @@ describe("Search component rendering:", () => {
 
         const errorMsg = await screen.findByText(/no results/i);
 
-       expect(errorMsg).toBeInTheDocument();
+        expect(errorMsg).toBeInTheDocument();
     });
 
     test("user types correct search term", async () => {
+        const searchBtn = screen.getByRole("button", { name: /search/i });
         userEvent.clear(searchInput);
-        userEvent.type(searchInput, "chicken");
+        userEvent.type(searchInput, "seafood");
+        userEvent.click(searchBtn);
 
         const searchResult = await screen.findByRole("img", {
-            name: /chicken category/i,
+            name: /seafood category/i,
         });
-
-        expect(searchResult).toBeInTheDocument();
+        await waitFor(() => expect(searchResult).toBeInTheDocument());
     });
 
     test("searching is case insensitive and starts on enter press key", async () => {
@@ -58,6 +59,6 @@ describe("Search component rendering:", () => {
         //userEvent.click(searchBtn);
         const searchResult = await screen.findByAltText(/vegetarian category/i);
 
-        expect(searchResult).toBeInTheDocument();
+        await waitFor(() => expect(searchResult).toBeInTheDocument());
     });
 });
