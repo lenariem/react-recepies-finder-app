@@ -7,7 +7,7 @@ export default function Meal(props) {
   return (
     <div className="card">
       <div className="card-image">
-        <img src={strMealThumb} alt={strMeal} />
+        <img src={strMealThumb} alt={`${strMeal} recipe`} />
       </div>
       <div className="card-content">
         <span className="card-title blue-teal text-lighten-2">

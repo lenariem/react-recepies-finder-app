@@ -1,0 +1,41 @@
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import App from "../App";
+import userEvent from "@testing-library/user-event";
+
+describe("Category page:", () => {
+    test("correct rendering seafood category:", async () => {
+        render(<App />);
+
+        const searchInput = await screen.findByRole("textbox");
+        const searchBtn = await screen.findByRole("button", {
+            name: /search/i,
+        });
+        userEvent.clear(searchInput);
+        userEvent.type(searchInput, "seafood");
+        userEvent.click(searchBtn);
+        const openBtn = await screen.findByText("Open Category");
+        userEvent.click(openBtn);
+
+        //Recipes are on the page
+        const categories = await screen.findAllByRole("img", {
+            name: /recipe$/i,
+        });
+        expect(categories).toHaveLength(27);
+
+        //Length of found recipes should be displayed
+        expect(screen.getByText(/found 27 recipes/i)).toBeInTheDocument();
+
+        // Button to back to the main page should be displayed
+        expect(
+            screen.getByRole("link", {
+                name: /arrow_back go back to main page/i,
+            })
+        ).toBeInTheDocument();
+
+        //Last recipe in the list should be displayed with image
+        expect(
+            screen.getByRole("img", { name: /tuna nicoise recipe/i })
+        ).toBeInTheDocument();
+    });
+});
