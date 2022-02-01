@@ -9,6 +9,7 @@ https://react-recepies-finder-app-lenariem.vercel.app/
 ### Technologies used: 
 * React JS
 * CSS, grid, media queries
+* Jest, React Testing Library, Mock Service Worker
 * Materialize
 * fetch
 * responsive for different devices
